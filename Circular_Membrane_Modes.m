@@ -16,7 +16,7 @@ title_m=m;   %saving the m and values for the title
 title_n=n;
 
 dr=.02;  %radial resolution
-a=1;  %radius of the circle
+a=2;  %radius of the circle
 r=0:dr:a;
 % theta=0:dtheta:2*pi-dtheta;
 
@@ -27,7 +27,7 @@ theta=0:dtheta:2*pi;
 
 
 
-mode_mn=besselj(m,mn(m+1,n+1)*R).*cos(m*Theta);
+mode_mn=besselj(m,mn(m+1,n+1)*R/a).*cos(m*Theta);
 %mode_02=besselj(1,R);
 X = R.*cos(Theta); 
 Y = R.*sin(Theta);
