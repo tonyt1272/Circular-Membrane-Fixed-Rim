@@ -6,7 +6,7 @@ table=[];
 %m=5;
 num_zeros=num_zeros+1;       %number of zeros I want
 x=0:.0001:5*num_zeros;       %vector for the Bessel function operate on
-
+wait_mode=waitbar(0,'Generating Modes');
 for j=1:m       %looping from 1 to m.  Special case at m=0 handled later
     n=1;     %initializing counter for each zero, looking for n of them
     i=0;     %initializing the index counter for tracing where in x
@@ -17,7 +17,7 @@ while (n-1) < num_zeros  %loop while the number of zeros found is less than
     if z(i)*z(i+1)<=0 %the zero check
         value=(x(i)+x(i+1))/2; %taking the middle value for zero location
         
-        if abs(value)<10^-2
+        if abs(value)<10^-4
             value=0;    %set values near zero to zero
         end
         bzero=[bzero value]; %collect zero locations into row vector
@@ -26,6 +26,7 @@ while (n-1) < num_zeros  %loop while the number of zeros found is less than
 end
 table=[table ;bzero];  %create table for zeros at m,n 
 bzero=[];
+waitbar(j/m,wait_mode,'Generating Modes');
 end
 n=1;
 i=0;
@@ -42,6 +43,7 @@ while (n-1) < num_zeros
         n=n+1;
     end
 end
+close(wait_mode)
 bzero=bzero(1:end-1); %Drop the last value because we will add the NaN
                       %to the front                      
 bzero=[NaN bzero];
