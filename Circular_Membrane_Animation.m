@@ -62,7 +62,7 @@ zlim([0,.25])
 title('Mode Construction of Initial Displacement')
 
 t_duration=15;
-dt=.005;
+dt=.0005;
 Shape=zeros(size(Initial));
 for t=0:dt:t_duration
 for n=1:n_modes
