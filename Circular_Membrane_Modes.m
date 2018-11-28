@@ -4,14 +4,13 @@ close all
 close hidden
 
 %function y = find_n_zeros(x)
-    
-mn=Bez_first_mnzeros(10,10); %Calls the function that supplies a table that 
-                             %holds the J_m(j_mn) = 0.  You can make the 
-                             %table as big as you need.
-
 m=1;        %choose the mode to be plotted
-n=2;
+n=1;
 
+dim=max([n,m]);
+mn=Bez_first_mnzeros(dim,dim); %Calls the function that supplies a table that 
+                             %holds the J_m(j_mn) = 0.
+                             
 title_m=m;   %saving the m and values for the title       
 title_n=n;
 
