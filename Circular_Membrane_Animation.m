@@ -61,7 +61,7 @@ surf(X,Y,Shape0)
 zlim([0,.25])
 title('Mode Construction of Initial Displacement')
 
-t_duration=10;
+t_duration=15;
 dt=.005;
 Shape=zeros(size(Initial));
 for t=0:dt:t_duration
@@ -92,4 +92,5 @@ title('Initial Gaussian Displacement')
 figure(2)
 surf(X,Y,Shape0)
 zlim([0,.25])
-title('Mode Construction of Initial Displacement')
+title(['Mode Construction of Initial Displacement, modes=',num2str(n_modes),])
+%title('Mode Construction of Initial Displacement')
