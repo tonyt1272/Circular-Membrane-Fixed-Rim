@@ -61,7 +61,7 @@ surf(X,Y,Shape0)
 zlim([0,.25])
 title('Mode Construction of Initial Displacement')
 
-t_duration=15;
+t_duration=5;
 dt=.0005;
 Shape=zeros(size(Initial));
 for t=0:dt:t_duration
@@ -76,12 +76,12 @@ end
     surf(X,Y,Shape)
     zlim([-h,h])
     pause(.001)
-    if t==0
-        title(['Thin Membrane,Fixed Edge,Damped, modes=',num2str(n_modes),])
-        xlabel('X')
-        ylabel('Z')
-        %str = input(prompt,'s');
-    end
+%     if t==0
+%         title(['Thin Membrane,Fixed Edge,Damped, modes=',num2str(n_modes),])
+%         xlabel('X')
+%         ylabel('Z')
+%         %str = input(prompt,'s');
+%     end
     Shape=zeros(size(Initial));
 end
 figure(1)
@@ -93,4 +93,4 @@ figure(2)
 surf(X,Y,Shape0)
 zlim([0,.25])
 title(['Mode Construction of Initial Displacement, modes=',num2str(n_modes),])
-%title('Mode Construction of Initial Displacement')
+
