@@ -5,13 +5,13 @@ close hidden
 
 %function y = find_n_zeros(x)
 prompt='Hit Return when ready';
-n_modes=12;    
+n_modes=10;    
 mn=Bez_first_mnzeros(n_modes,n_modes); %Calls the function that supplies a table that 
                              %holds the J_m(j_mn) = 0.  You can make the 
                              %table as big as you need.
 
 rho=3;
-J=10;
+J=15;
 c=sqrt(J/rho);
 dr=.02;  %radial resolution
 a=1.0;  %radius of the circle
@@ -51,20 +51,11 @@ close(wait_shape)
 X = R.*cos(Theta); %Converting to cartesian for plotting
 Y = R.*sin(Theta); %
 
-% figure(1)
-% surf(X,Y,Initial)
-% zlim([0,.25])
-% title('Initial Gaussian Displacement')
-
-% figure(2)
-% surf(X,Y,Shape0)
-% zlim([0,.25])
-% title('Mode Construction of Initial Displacement')
 figure(1);
 hFig1 = figure(1);
 set(hFig1, 'Position', [250 200 800 700])
 t_duration=5;
-dt=.0005;
+dt=.002;
 Shape=zeros(size(Initial));
 for t=0:dt:t_duration
 for n=1:n_modes
